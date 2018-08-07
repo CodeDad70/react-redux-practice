@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import createPost from '../actions/postActions'
 
 let id = 0
 
@@ -9,10 +11,16 @@ class Form extends Component {
     let title = this.getTitle.Value;
     let message = this.getMessage.value;
     const data = {
-      id: new Date(),
+      id: ++id,
       title, 
       message
     }
+    this.props.dispatch({
+      type:'ADD_POST',
+      data
+    })
+    this.getTitle.value=''
+    this.getMessage.value=''
   }
 
   render() {
@@ -44,4 +52,4 @@ class Form extends Component {
   }
 }
 
-export default Form 
+export default connect()(Form); 
