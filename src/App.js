@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
+import Form from './containers/Form'
+import Posts from './components/Posts'
 
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        >
-          <h1 className="App-title">Testing Render</h1>
-        
+        <Form/>
+        <Posts/>  
       </div>
     );
   }
