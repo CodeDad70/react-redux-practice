@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import createPost from '../actions/postActions'
 
 let id = 0
 
@@ -8,7 +7,7 @@ class Form extends Component {
   
   handleSubmit = (e) => {
     e.preventDefault();
-    let title = this.getTitle.Value;
+    let title = this.getTitle.value;
     let message = this.getMessage.value;
     const data = {
       id: ++id,
