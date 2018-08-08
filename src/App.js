@@ -6,7 +6,7 @@ import Posts from './components/Posts'
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <div className="app">
         <Form/>
         <Posts/>  
       </div>

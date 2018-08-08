@@ -1,17 +1,22 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux'
 import Post from './Post'
+import Edit from './Edit';
 
 class Posts extends Component {
   render(){
     return (
       <div>
-        <h3>Posts:</h3>
-        {this.props.posts.map((post)=>
-          <Post key={post.id} post={post}/>
-        )}
-       </div> 
-    )
+        <h1>All Posts</h1>
+          {this.props.posts.map((post) => (
+            <div key={post.id}>
+              {post.editing ? 
+                <Edit post={post} key={post.id} /> :
+                <Post key={post.id} post={post} />}
+            </div>
+        ))}
+      </div>
+    );
   }
 }
 

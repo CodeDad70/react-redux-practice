@@ -12,7 +12,8 @@ class Form extends Component {
     const data = {
       id: ++id,
       title, 
-      message
+      message,
+      editing: false
     }
     this.props.dispatch({
       type:'ADD_POST',
@@ -25,7 +26,7 @@ class Form extends Component {
   render() {
     return (
       
-     <div>
+     <div className="app">
        <h2>Create Post</h2>
        
        <form onSubmit={this.handleSubmit}>
